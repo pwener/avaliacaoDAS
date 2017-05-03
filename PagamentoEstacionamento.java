@@ -7,6 +7,13 @@ public class PagamentoEstacionamento {
 	public int quantidadeHoras;
 	public int quantidadeMinutos;
 
+	/**
+	 * Não faz sentido existir pagamento sem horas e minutos,
+	 * por isso essa composição.
+	 * 
+	 * @param horas utilizadas no estacionamento
+	 * @param minutos utilizados no estacionamento
+	 */
 	public PagamentoEstacionamento(int horas, int minutos) {
 		this.quantidadeHoras = horas;
 		this.quantidadeMinutos = minutos;
@@ -23,6 +30,10 @@ public class PagamentoEstacionamento {
 		return valorEmMinutos;
 	}
 
+	/**
+	 * Obtem calculo do valor total do estacionamento
+	 * 
+	 */
 	public float obterValorTotal() {
 		float valorTotal = 0;
 
