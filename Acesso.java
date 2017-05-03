@@ -27,17 +27,19 @@ public class Acesso {
 	
 	
 	public float calcularValor() { 
-		int quantidadeHoras = horaSaida - horaEntrada; 
-		int quantidadeMinutos; 
+		int quantidadeHoras = horaSaida - horaEntrada;
+		int quantidadeMinutos;
 		
-		if (horaSaida == horaEntrada)
+		
+		if (horaSaida == horaEntrada) {
 			quantidadeMinutos = minutosSaida - minutosEntrada;
+		}
 		else if (horaSaida > horaEntrada && minutosEntrada == minutosSaida){
 			quantidadeMinutos = 0;
-			quantidadeHoras = horaSaida - horaEntrada;
 		}
-		else if (horaSaida > horaEntrada && minutosEntrada > minutosSaida) 
+		else if (horaSaida > horaEntrada && minutosEntrada > minutosSaida) {
 			quantidadeMinutos = minutosSaida - minutosEntrada;
+		}
 		else if (horaSaida > horaEntrada && minutosSaida < minutosEntrada){
 			quantidadeMinutos = minutosSaida + (60 - minutosEntrada);
 			quantidadeHoras = horaSaida - horaEntrada - 1;
@@ -47,14 +49,15 @@ public class Acesso {
 			quantidadeMinutos = 0;
 		}
 		
-		float valorTotal = 0; 
-		valorTotal += quantidadeHoras * VALOR_HORA;
-		valorTotal += Math.ceil(quantidadeMinutos / 15.0) * VALOR_FRACAO;		
+		float valorEmHora = quantidadeHoras * VALOR_HORA;
+		float valorEmMinutos = (float) (Math.ceil(quantidadeMinutos / 15.0) * VALOR_FRACAO);
+		float valorTotal = valorEmHora + valorEmMinutos;		
 		
-		if (quantidadeHoras >=9)
+		if (quantidadeHoras >= 9) {
 			return VALOR_DIARIA;
-		else 
+		} else { 
 			return valorTotal;
+		}
 	}
 	
 	
