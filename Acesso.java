@@ -30,7 +30,6 @@ public class Acesso {
 		int quantidadeHoras = horaSaida - horaEntrada;
 		int quantidadeMinutos;
 		
-		
 		if (horaSaida == horaEntrada) {
 			quantidadeMinutos = minutosSaida - minutosEntrada;
 		}
@@ -68,8 +67,5 @@ public class Acesso {
 
 	public void setMinutosSaida(int minutosSaida) {
 		this.minutosSaida = minutosSaida;
-	}
-	
-	
-	
+	}	
 }
